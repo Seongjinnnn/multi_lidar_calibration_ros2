@@ -94,7 +94,7 @@ void MultiLidarCalibrationIcp::callbackLidars(const sensor_msgs::msg::PointCloud
     Eigen::Quaternionf q(rotation_matrix);
     geometry_msgs::msg::TransformStamped t;
     t.header.stamp = point_1->header.stamp;
-    t.header.frame_id = point_1->header.frame_id;
+    t.header.frame_id = "os_sensor" //JSJ250110
     t.child_frame_id = point_2->header.frame_id;
     t.transform.translation.x = translation_vector[0];
     t.transform.translation.y = translation_vector[1];
